@@ -1,7 +1,7 @@
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  readonly client: string;
+  private details: string;
+  public amount: number;
 
   constructor(c: string, d: string, a: number ) {
     this.client = c;
@@ -10,6 +10,7 @@ class Invoice {
   }
 
   format() {
+    // this.client = "You cant change me";
     return `${this.client} owes $${this.amount} for ${this.details} `;
   }
 }
@@ -22,24 +23,10 @@ const in2 =  new Invoice("Mery", "creating a website", 234);
 let invoices : Invoice[] = [ ];
 invoices.push(in1);
 invoices.push(in2);
-console.log("invoices => ", invoices);
-
-const form = document.querySelector(".new-item-form") as HTMLFormElement;
-console.log(form.children);
 
 
-// Get inputs of the form elements
-const type = document.querySelector('#type') as HTMLSelectElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
-
-form.addEventListener('submit', (e:Event) => {
-  e.preventDefault() ;
-  console.log(
-    type.value,
-    tofrom.value,
-    details.value,
-    amount.valueAsNumber ,
-  );
+// private : cant access data outise the class , but we can acces it using method of the class format
+// readonly you cant modify prop inisde or outside the class
+invoices.forEach(inv => {
+  console.log(inv.client, inv.amount, inv.format);
 })
