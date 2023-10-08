@@ -1,17 +1,21 @@
 "use strict";
-const anchor = document.querySelector("a");
-// if (anchor) {
-//   console.log(anchor.href);
-// }
-// to make sure the a has items inside in it whe add ! to make sure it s not null
-console.log(anchor.href);
-// type casting :
-// Typscript recongnises the selector element and show you methods related to it anchor.querySelctor..
-// Form is of type Html Form element
-// const form = document.querySelector('form');
-// Form is of type Html Elmenent
-// const form = document.querySelector('new-item-form');
-// Make it of type Html form elemnt
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details} `;
+    }
+}
+const in1 = new Invoice("Safa", "creating a website", 300);
+const in2 = new Invoice("Mery", "creating a website", 234);
+// array of only invoices 
+let invoices = [];
+invoices.push(in1);
+invoices.push(in2);
+console.log("invoices => ", invoices);
 const form = document.querySelector(".new-item-form");
 console.log(form.children);
 // Get inputs of the form elements

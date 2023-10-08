@@ -1,23 +1,29 @@
-const anchor = document.querySelector("a")!;
-// if (anchor) {
-//   console.log(anchor.href);
-// }
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-// to make sure the a has items inside in it whe add ! to make sure it s not null
+  constructor(c: string, d: string, a: number ) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-console.log(anchor.href);
+  format() {
+    return `${this.client} owes $${this.amount} for ${this.details} `;
+  }
+}
 
-// type casting :
+const in1 =  new Invoice("Safa", "creating a website", 300);
+const in2 =  new Invoice("Mery", "creating a website", 234);
 
-// Typscript recongnises the selector element and show you methods related to it anchor.querySelctor..
+// array of only invoices 
 
-// Form is of type Html Form element
-// const form = document.querySelector('form');
+let invoices : Invoice[] = [ ];
+invoices.push(in1);
+invoices.push(in2);
+console.log("invoices => ", invoices);
 
-// Form is of type Html Elmenent
-// const form = document.querySelector('new-item-form');
-
-// Make it of type Html form elemnt
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 console.log(form.children);
 
