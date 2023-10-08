@@ -1,20 +1,33 @@
-// Aliases
-type StrOrNum = number | string;
-type ObjWith = { uid: StrOrNum; item: string }
+// Function signature
+// with ":"
 
-let logDetail = (uid: StrOrNum,  item: string) => {
-  console.log(`${item} has uid of ${undefined} `);
+// Describes the general structure of the function: what are arg it takes and  what tyoe of data it returns
+
+// Example 1 with ":"
+let greet: (a: number) => void;
+
+greet = (num: number) => {
+  console.log("hala");
 };
 
-// function with an object parameter
-let greet = (user: ObjWith , phrase: string) => {
-  console.log(` ${user.item} with ${user.uid} says ${phrase}  `);
+// Example 2
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (n1: number, n2: number, action: string) => {
+  if (action == "add") {
+    return n1 + n2;
+  } else {
+    return n2;
+  }
 };
 
-let obj : ObjWith
-obj = {
-  uid: "122SRTR",
-  item: "Ssam"
-};
+// CanNot do this 
+// calc = (n1: string, n2: boolean, action: string) => {
+//     if (action == "add") {
+//       return n1 + n2;
+//     } else {
+//       return n2;
+//     }
+//   };
+  
 
-greet(obj, "Hello");
