@@ -1,16 +1,4 @@
-"use strict";
-class Invoice {
-    // Shorthand for decalring and assigning props
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        // this.client = "You cant change me";
-        return `${this.client} owes $${this.amount} for ${this.details} `;
-    }
-}
+import { Invoice } from "./classes/Invoice.js";
 const in1 = new Invoice("Safa", "creating a website", 300);
 const in2 = new Invoice("Mery", "creating a website", 234);
 // array of only invoices

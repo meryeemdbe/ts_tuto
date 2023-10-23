@@ -1,17 +1,4 @@
-class Invoice {
-  // Shorthand for decalring and assigning props
-  //  !! Access modifiers are Required !!
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ) {}
-
-  format() {
-    // this.client = "You cant change me";
-    return `${this.client} owes $${this.amount} for ${this.details} `;
-  }
-}
+import { Invoice } from "./classes/Invoice.js";
 
 const in1 = new Invoice("Safa", "creating a website", 300);
 const in2 = new Invoice("Mery", "creating a website", 234);
